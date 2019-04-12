@@ -37,7 +37,7 @@ script will programmatically modify:
 $ git checkout tox.ini doc/requirements.txt doc/source/conf.py
 
 Create the new patch file with
-$ git diff > ../../patches/{projects}.patch
+$ git diff > ../../patches/{projects}/00.patch
 
 Commit it into git
 $ cd ../..
