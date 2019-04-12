@@ -1,0 +1,7 @@
+build/
+# emacs temp/autosave
+\#*#
+.#*
+*~
+working/
+*.xpr
