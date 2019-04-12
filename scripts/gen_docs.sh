@@ -158,6 +158,7 @@ EOF
     done
 
     echo "### Build the theme'd docs"
+    crudini --set tox.ini testenv:docs basepython python2
     tox ${TOX_OPTS} -e docs
 
 done
