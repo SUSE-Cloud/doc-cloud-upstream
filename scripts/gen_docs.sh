@@ -2,7 +2,6 @@
 
 # Figure out where this script resides
 scripts_dir=$(dirname "$(readlink -e "${BASH_SOURCE[0]}")")
-templates_dir=$(readlink -e "${scripts_dir}/../templates")
 
 source ${scripts_dir}/upstream-docs.conf
 
