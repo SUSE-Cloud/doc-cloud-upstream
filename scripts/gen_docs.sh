@@ -101,11 +101,14 @@ EOF
     # Grab the [docs] section of tox.ini and from that pluck out the commands section
     commands=$(sed -n '/docs\]/,/^\[/ p' tox.ini |  sed -n '/^commands/,/^[^ ]/ p' | head --lines=-1)
 
-    patch_file=${scripts_dir}/patches/${project}.patch
-
-    if [[ -f ${patch_file} ]] ; then
-        echo "### Patching documents"
-        git apply < $patch_file
+    # apply all patches found in project patch directory
+    patch_dir=${scripts_dir}/patches/${project}
+    if [[ -d ${patch_dir} ]] ; then
+        echo "### Patching ${project}"
+        for p in ${patch_dir}/*.patch; do
+            git apply < ${p}
+            echo "#### Patch ${p} applied"
+        done
     fi
 
     # Remove the -W flag on sphinx-build commands to avoid warnings terminating the build
