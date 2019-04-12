@@ -1,0 +1,6 @@
+build/
+working/
+*.xpr
+scripts/upstream
+scripts/source/admin/index.rst
+scripts/source/user/index.rst
