@@ -222,5 +222,7 @@ done
 
 find ${scripts_dir}/build -type d -name .doctrees -o -name _sources | xargs rm -rf
 
+cp -p ${scripts_dir}/../LICENSE ${scripts_dir}/build/
+
 # Print the message with surrounding lines of hashes
 print_title "The generated docs are in scripts/build/admin and scripts/build/user"
