@@ -42,3 +42,29 @@ $ git diff > ../../patches/{projects}/00.patch
 Commit it into git
 $ cd ../..
 $ git commit 
+
+----------------------
+Building upstream docs
+----------------------
+
+If you're required to build the upstream Administration and User Guides, you can build and
+view each individual guide upstream: https://docs.openstack.org/doc-contrib-guide/docs-builds.html 
+
+If you want to build the SUSE version, equivalent to what is published at at
+suse.com/documentation, perform the following:
+
+1. Clone this repository: https://github.com/SUSE-Cloud/doc-cloud-upstream
+2. Change into the `/scripts/` directory:
+   
+   $ cd scripts
+   
+3. Run `./gen_docs.sh`
+
+   This process clones every repository required, and builds them using
+   the `suse_sphinx_theme`. You need to allocate at least an hour for the
+   process to complete.
+   
+4. You can find the finished product in the `/scripts/build/` folder.
+
+The completed `/build/` folder contains the full and complete content required
+to publish to docserv or docserv2. Do not alter this format when publishing.
